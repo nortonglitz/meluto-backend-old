@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/app.ts",
   "scripts": {
-    "start": "ts-node --files -r tsconfig-paths/register src/app.ts"
+    "start": "ts-node --files -r tsconfig-paths/register src/app.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
