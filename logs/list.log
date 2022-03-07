@@ -1,0 +1,145 @@
+[05/Mar 21:36:00.442] (TypeError) error: Cannot create property 'updatedAt' on string 'Norton' TypeError: Cannot create property 'updatedAt' on string 'Norton'
+    at $__applyDefaults (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/document.js:523:25)
+    at model.Document.$__init (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/document.js:751:3)
+    at model.syncWrapper [as $__init] (/home/norton/Projetos/meluto/meluto-backend/node_modules/kareem/index.js:235:23)
+    at model.Document.init (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/document.js:698:8)
+    at model.Document.$init (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/document.js:708:42)
+    at completeOne (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:3182:12)
+    at model.Query.Query._completeOne (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:2391:7)
+    at cb (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:3898:11)
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:3936:14
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4732:12
+[05/Mar 21:36:56.382] (TypeError) error: Cannot create property 'updatedAt' on string 'Norton' TypeError: Cannot create property 'updatedAt' on string 'Norton'
+    at $__applyDefaults (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/document.js:523:25)
+    at model.Document.$__init (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/document.js:751:3)
+    at model.syncWrapper [as $__init] (/home/norton/Projetos/meluto/meluto-backend/node_modules/kareem/index.js:235:23)
+    at model.Document.init (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/document.js:698:8)
+    at model.Document.$init (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/document.js:708:42)
+    at completeOne (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:3182:12)
+    at model.Query.Query._completeOne (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:2391:7)
+    at cb (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:3898:11)
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:3936:14
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4732:12
+[05/Mar 23:37:36.256] (MongoServerError) error: E11000 duplicate key error collection: melutoDatabaseDev.users index: username.value_1 dup key: { username.value: null } MongoServerError: E11000 duplicate key error collection: melutoDatabaseDev.users index: username.value_1 dup key: { username.value: null }
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/operations/insert.ts:75:25
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection_pool.ts:482:13
+    at handleOperationResult (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/sdam/server.ts:610:5)
+    at MessageStream.messageHandler (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection.ts:765:5)
+    at MessageStream.emit (node:events:520:28)
+    at MessageStream.emit (node:domain:475:12)
+    at processIncomingData (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:168:12)
+    at MessageStream._write (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:65:5)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+[05/Mar 23:39:27.039] (MongoServerError) error: E11000 duplicate key error collection: melutoDatabaseDev.users index: username.value_1 dup key: { username.value: null } MongoServerError: E11000 duplicate key error collection: melutoDatabaseDev.users index: username.value_1 dup key: { username.value: null }
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/operations/insert.ts:75:25
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection_pool.ts:482:13
+    at handleOperationResult (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/sdam/server.ts:610:5)
+    at MessageStream.messageHandler (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection.ts:765:5)
+    at MessageStream.emit (node:events:520:28)
+    at MessageStream.emit (node:domain:475:12)
+    at processIncomingData (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:168:12)
+    at MessageStream._write (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:65:5)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+[05/Mar 23:44:20.028] (CastError) error: Cast to Embedded failed for value "123" (type string) at path "username" for model "User" CastError: Cast to Embedded failed for value "123" (type string) at path "username" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[05/Mar 23:45:50.897] (CastError) error: Cast to Embedded failed for value "123" (type string) at path "username" for model "User" CastError: Cast to Embedded failed for value "123" (type string) at path "username" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[05/Mar 23:46:31.510] (CastError) error: Cast to Embedded failed for value "123" (type string) at path "username" for model "User" CastError: Cast to Embedded failed for value "123" (type string) at path "username" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[06/Mar 02:29:53.367] (Error) error: Email is invalid Error: Email is invalid
+    at validateEmail (/home/norton/Projetos/meluto/meluto-backend/src/utils/forms/user/userEdit.ts:23:11)
+    at /home/norton/Projetos/meluto/meluto-backend/src/controllers/users.ts:90:20
+    at Generator.next (<anonymous>)
+    at fulfilled (/home/norton/Projetos/meluto/meluto-backend/src/controllers/users.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[06/Mar 02:37:37.360] (Error) error: Email error Error: Email error
+    at validateEmail (/home/norton/Projetos/meluto/meluto-backend/src/utils/forms/user/userEdit.ts:23:11)
+    at /home/norton/Projetos/meluto/meluto-backend/src/controllers/users.ts:90:20
+    at Generator.next (<anonymous>)
+    at fulfilled (/home/norton/Projetos/meluto/meluto-backend/src/controllers/users.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[06/Mar 02:38:30.847] (Error) error: Email error Error: Email error
+    at validateEmail (/home/norton/Projetos/meluto/meluto-backend/src/utils/forms/user/userEdit.ts:23:11)
+    at /home/norton/Projetos/meluto/meluto-backend/src/controllers/users.ts:90:20
+    at Generator.next (<anonymous>)
+    at fulfilled (/home/norton/Projetos/meluto/meluto-backend/src/controllers/users.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[06/Mar 02:40:40.636] (Error) error: Email error Error: Email error
+    at validateEmail (/home/norton/Projetos/meluto/meluto-backend/src/utils/forms/user/userEdit.ts:23:11)
+    at /home/norton/Projetos/meluto/meluto-backend/src/controllers/users.ts:90:20
+    at Generator.next (<anonymous>)
+    at fulfilled (/home/norton/Projetos/meluto/meluto-backend/src/controllers/users.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[06/Mar 02:46:22.794] (ValidationError) error: email must be string ValidationError: email must be string
+    at validateEmail (/home/norton/Projetos/meluto/meluto-backend/src/utils/forms/user/userEdit.ts:26:15)
+    at /home/norton/Projetos/meluto/meluto-backend/src/controllers/users.ts:90:20
+    at Generator.next (<anonymous>)
+    at fulfilled (/home/norton/Projetos/meluto/meluto-backend/src/controllers/users.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[06/Mar 02:48:03.153] (ValidationError) error: email must be string ValidationError: email must be string
+    at validateEmail (/home/norton/Projetos/meluto/meluto-backend/src/utils/forms/user/userEdit.ts:26:15)
+    at /home/norton/Projetos/meluto/meluto-backend/src/controllers/users.ts:90:20
+    at Generator.next (<anonymous>)
+    at fulfilled (/home/norton/Projetos/meluto/meluto-backend/src/controllers/users.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[06/Mar 02:52:49.871] (undefined) error: [object Object] undefined
+[06/Mar 15:10:04.363] (ValidationErrorY}) error: /email: must be string 
+[06/Mar 15:23:53.583] (ValidationErrorType) error: must be string /email
+[00/Mar 00:20:42.897] (Validation Error) error: (format) must match format "email" /email
+[00/Mar 00:20:44.419] (Validation Error) error: (format) must match format "email" /email
+[00/Mar 00:56:43.291] (SyntaxError) error: Unexpected token } in JSON at position 29 SyntaxError: Unexpected token } in JSON at position 29
+    at JSON.parse (<anonymous>)
+    at parse (/home/norton/Projetos/meluto/meluto-backend/node_modules/body-parser/lib/types/json.js:89:19)
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/body-parser/lib/read.js:121:18
+    at invokeCallback (/home/norton/Projetos/meluto/meluto-backend/node_modules/raw-body/index.js:224:16)
+    at done (/home/norton/Projetos/meluto/meluto-backend/node_modules/raw-body/index.js:213:7)
+    at IncomingMessage.onEnd (/home/norton/Projetos/meluto/meluto-backend/node_modules/raw-body/index.js:273:7)
+    at IncomingMessage.emit (node:events:532:35)
+    at IncomingMessage.emit (node:domain:475:12)
+    at endReadableNT (node:internal/streams/readable:1346:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+[00/Mar 00:57:46.889] (SyntaxError) error: Unexpected token } in JSON at position 30 SyntaxError: Unexpected token } in JSON at position 30
+    at JSON.parse (<anonymous>)
+    at parse (/home/norton/Projetos/meluto/meluto-backend/node_modules/body-parser/lib/types/json.js:89:19)
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/body-parser/lib/read.js:121:18
+    at invokeCallback (/home/norton/Projetos/meluto/meluto-backend/node_modules/raw-body/index.js:224:16)
+    at done (/home/norton/Projetos/meluto/meluto-backend/node_modules/raw-body/index.js:213:7)
+    at IncomingMessage.onEnd (/home/norton/Projetos/meluto/meluto-backend/node_modules/raw-body/index.js:273:7)
+    at IncomingMessage.emit (node:events:532:35)
+    at IncomingMessage.emit (node:domain:475:12)
+    at endReadableNT (node:internal/streams/readable:1346:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+[00/Mar 00:58:08.604] (SyntaxError) error: Unexpected token } in JSON at position 30 SyntaxError: Unexpected token } in JSON at position 30
+    at JSON.parse (<anonymous>)
+    at parse (/home/norton/Projetos/meluto/meluto-backend/node_modules/body-parser/lib/types/json.js:89:19)
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/body-parser/lib/read.js:121:18
+    at invokeCallback (/home/norton/Projetos/meluto/meluto-backend/node_modules/raw-body/index.js:224:16)
+    at done (/home/norton/Projetos/meluto/meluto-backend/node_modules/raw-body/index.js:213:7)
+    at IncomingMessage.onEnd (/home/norton/Projetos/meluto/meluto-backend/node_modules/raw-body/index.js:273:7)
+    at IncomingMessage.emit (node:events:532:35)
+    at IncomingMessage.emit (node:domain:475:12)
+    at endReadableNT (node:internal/streams/readable:1346:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+[00/Mar 02:39:21.619] (CastError) error: Cast to string failed for value "Promise { <pending> }" (type Promise) at path "value" CastError: Cast to string failed for value "Promise { <pending> }" (type Promise) at path "value"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+[00/Mar 02:40:15.480] (CastError) error: Cast to string failed for value "Promise { <pending> }" (type Promise) at path "value" CastError: Cast to string failed for value "Promise { <pending> }" (type Promise) at path "value"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+[00/Mar 15:59:55.422] (ValidationError) error: (minLength) must NOT have fewer than 8 characters /password
+[00/Mar 22:13:12.473] (CastError) error: Cast to Embedded failed for value "norton92" (type string) at path "username" for model "User" CastError: Cast to Embedded failed for value "norton92" (type string) at path "username" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[00/Mar 22:15:02.758] (CastError) error: Cast to Embedded failed for value "norton92" (type string) at path "username" for model "User" CastError: Cast to Embedded failed for value "norton92" (type string) at path "username" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
