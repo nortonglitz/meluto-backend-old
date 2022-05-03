@@ -3,7 +3,7 @@ import { JwtConfig } from 'types/jwt'
 export const accessToken: JwtConfig = {
   algorithm: 'ES256',
   algorithms: ['ES256'],
-  expiresIn: '15m'
+  expiresIn: '15s'
 }
 
 export const refreshToken: JwtConfig = {

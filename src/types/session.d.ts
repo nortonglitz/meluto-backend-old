@@ -3,6 +3,7 @@ import { ObjectId } from 'mongoose'
 type RefreshToken = {
   refreshToken: string
   used: boolean
+  createdAt: Date
 }
 
 type From = {
@@ -34,5 +35,6 @@ export interface SessionModel {
   blocked: boolean
   refreshTokens: RefreshToken[]
   loginTimes: number
-  from: From
+  from: From,
+  lastLogin: Date
 }

@@ -1,26 +1,23 @@
 import { formatError } from '../formatError'
-import Ajv, { JSONSchemaType } from 'ajv'
+import Ajv from 'ajv'
 import { passwordProperty } from '../properties'
 
-const ajv = new Ajv()
+const ajv = new Ajv({ $data: true })
 
-interface EditPassword {
-  password: string
-}
-
-const schema: JSONSchemaType<EditPassword> = {
+const schema = {
   type: 'object',
   properties: {
-    password: passwordProperty
+    newPassword: passwordProperty,
+    confirmNewPassword: { const: { $data: '1/newPassword' } }
   },
   additionalProperties: false,
-  required: ['password']
+  required: ['newPassword', 'confirmNewPassword']
 }
 
 const validate = ajv.compile(schema)
 
-export const validatePassword = (password: string) => {
-  if (validate({ password })) {
+export const validatePassword = (newPassword: string, confirmNewPassword: string) => {
+  if (validate({ newPassword, confirmNewPassword })) {
     return
   }
 

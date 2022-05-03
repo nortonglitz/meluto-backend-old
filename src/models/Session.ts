@@ -2,9 +2,10 @@ import { Schema, model, Types } from 'mongoose'
 import { SessionModel } from 'types/session'
 
 const refreshTokenSchema = new Schema({
-  refreshToken: { type: String, required: true, unique: true },
+  refreshToken: { type: String, required: true },
+  createdAt: { type: Date, default: Date.now },
   used: { type: Boolean, default: false }
-}, { _id: false, timestamps: { updatedAt: false } })
+}, { _id: false })
 
 const clientSchema = new Schema({
   type: String,
@@ -40,11 +41,8 @@ const sessionSchema = new Schema<SessionModel>({
   refreshTokens: { type: [refreshTokenSchema] },
   loginTimes: { type: Number, default: 1 },
   from: { type: fromSchema },
-  createdAt: { type: Date, expires: 7776000 },
-  updatedAt: { type: Date }
-}, { _id: false })
-
-// expires after 90 days
-sessionSchema.index({ createdAt: 1 }, { expireAfterSeconds: 7776000 })
+  createdAt: { type: Date, immutable: true },
+  lastLogin: { type: Date, expires: 7776000, default: Date.now }
+}, { _id: false, timestamps: true })
 
 export default model('Session', sessionSchema)

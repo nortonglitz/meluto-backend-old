@@ -143,3 +143,140 @@
     at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
     at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[02/Apr 17:02:32.954] (CastError) error: Cast to Embedded failed for value "aVTU4Z62IPOF3" (type string) at path "username" for model "User" CastError: Cast to Embedded failed for value "aVTU4Z62IPOF3" (type string) at path "username" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[02/Apr 17:03:33.510] (CastError) error: Cast to Embedded failed for value "aVTU4Z62IPOF3" (type string) at path "username" for model "User" CastError: Cast to Embedded failed for value "aVTU4Z62IPOF3" (type string) at path "username" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[02/Apr 17:05:51.982] (CastError) error: Cast to Embedded failed for value "asd" (type string) at path "username" for model "User" CastError: Cast to Embedded failed for value "asd" (type string) at path "username" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[02/Apr 17:07:07.649] (CastError) error: Cast to Embedded failed for value "asd" (type string) at path "username" for model "User" CastError: Cast to Embedded failed for value "asd" (type string) at path "username" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/May 17:11:49.127] (TypeError) error: Cannot read properties of undefined (reading 'value') TypeError: Cannot read properties of undefined (reading 'value')
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:190:44
+    at Generator.next (<anonymous>)
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:4:12)
+    at passwordRequired (/home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:187:74)
+    at Layer.handle [as handle_request] (/home/norton/Projetos/meluto/meluto-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/norton/Projetos/meluto/meluto-backend/node_modules/express/lib/router/route.js:137:13)
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:174:16
+    at Generator.next (<anonymous>)
+[01/May 17:13:00.560] (TypeError) error: Cannot read properties of undefined (reading 'value') TypeError: Cannot read properties of undefined (reading 'value')
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:190:44
+    at Generator.next (<anonymous>)
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:4:12)
+    at passwordRequired (/home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:187:74)
+    at Layer.handle [as handle_request] (/home/norton/Projetos/meluto/meluto-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/norton/Projetos/meluto/meluto-backend/node_modules/express/lib/router/route.js:137:13)
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:174:16
+    at Generator.next (<anonymous>)
+[01/May 17:13:19.779] (TypeError) error: Cannot read properties of undefined (reading 'value') TypeError: Cannot read properties of undefined (reading 'value')
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:190:44
+    at Generator.next (<anonymous>)
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:4:12)
+    at passwordRequired (/home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:187:74)
+    at Layer.handle [as handle_request] (/home/norton/Projetos/meluto/meluto-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/norton/Projetos/meluto/meluto-backend/node_modules/express/lib/router/route.js:137:13)
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:174:16
+    at Generator.next (<anonymous>)
+[01/May 17:15:16.298] (TypeError) error: Cannot read properties of undefined (reading 'value') TypeError: Cannot read properties of undefined (reading 'value')
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:190:44
+    at Generator.next (<anonymous>)
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:4:12)
+    at passwordRequired (/home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:187:74)
+    at Layer.handle [as handle_request] (/home/norton/Projetos/meluto/meluto-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/norton/Projetos/meluto/meluto-backend/node_modules/express/lib/router/route.js:137:13)
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:174:16
+    at Generator.next (<anonymous>)
+[01/May 17:15:39.127] (TypeError) error: Cannot read properties of undefined (reading 'value') TypeError: Cannot read properties of undefined (reading 'value')
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:190:44
+    at Generator.next (<anonymous>)
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:4:12)
+    at passwordRequired (/home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:187:74)
+    at Layer.handle [as handle_request] (/home/norton/Projetos/meluto/meluto-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/norton/Projetos/meluto/meluto-backend/node_modules/express/lib/router/route.js:137:13)
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:174:16
+    at Generator.next (<anonymous>)
+[01/May 17:16:05.368] (TypeError) error: Cannot read properties of undefined (reading 'value') TypeError: Cannot read properties of undefined (reading 'value')
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:190:44
+    at Generator.next (<anonymous>)
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:4:12)
+    at passwordRequired (/home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:187:74)
+    at Layer.handle [as handle_request] (/home/norton/Projetos/meluto/meluto-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/norton/Projetos/meluto/meluto-backend/node_modules/express/lib/router/route.js:137:13)
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:174:16
+    at Generator.next (<anonymous>)
+[01/May 17:17:18.672] (TypeError) error: Cannot read properties of undefined (reading 'value') TypeError: Cannot read properties of undefined (reading 'value')
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:190:44
+    at Generator.next (<anonymous>)
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:4:12)
+    at passwordRequired (/home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:187:74)
+    at Layer.handle [as handle_request] (/home/norton/Projetos/meluto/meluto-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/norton/Projetos/meluto/meluto-backend/node_modules/express/lib/router/route.js:137:13)
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:174:16
+    at Generator.next (<anonymous>)
+[01/May 17:17:36.290] (TypeError) error: Cannot read properties of undefined (reading 'value') TypeError: Cannot read properties of undefined (reading 'value')
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:190:44
+    at Generator.next (<anonymous>)
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:4:12)
+    at passwordRequired (/home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:187:74)
+    at Layer.handle [as handle_request] (/home/norton/Projetos/meluto/meluto-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/norton/Projetos/meluto/meluto-backend/node_modules/express/lib/router/route.js:137:13)
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:174:16
+    at Generator.next (<anonymous>)
+[01/May 17:18:03.213] (TypeError) error: Cannot read properties of undefined (reading 'value') TypeError: Cannot read properties of undefined (reading 'value')
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:190:44
+    at Generator.next (<anonymous>)
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:4:12)
+    at passwordRequired (/home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:187:74)
+    at Layer.handle [as handle_request] (/home/norton/Projetos/meluto/meluto-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/norton/Projetos/meluto/meluto-backend/node_modules/express/lib/router/route.js:137:13)
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:174:16
+    at Generator.next (<anonymous>)
+[01/May 17:18:18.410] (TypeError) error: Cannot read properties of undefined (reading 'value') TypeError: Cannot read properties of undefined (reading 'value')
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:190:44
+    at Generator.next (<anonymous>)
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:4:12)
+    at passwordRequired (/home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:187:74)
+    at Layer.handle [as handle_request] (/home/norton/Projetos/meluto/meluto-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/norton/Projetos/meluto/meluto-backend/node_modules/express/lib/router/route.js:137:13)
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:174:16
+    at Generator.next (<anonymous>)
+[01/May 17:18:54.530] (TypeError) error: Cannot read properties of undefined (reading 'value') TypeError: Cannot read properties of undefined (reading 'value')
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:190:44
+    at Generator.next (<anonymous>)
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:4:12)
+    at passwordRequired (/home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:187:74)
+    at Layer.handle [as handle_request] (/home/norton/Projetos/meluto/meluto-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/norton/Projetos/meluto/meluto-backend/node_modules/express/lib/router/route.js:137:13)
+    at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:174:16
+    at Generator.next (<anonymous>)

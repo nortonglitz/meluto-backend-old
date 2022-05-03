@@ -15,7 +15,7 @@ export const createUser: RequestHandler = async (req, res, next) => {
 
     if (userExists) {
       return res.status(409).json({
-        error: 'DuplicateEmail',
+        error: 'DuplicateEmailError',
         message: 'Email already in use.'
       })
     }
