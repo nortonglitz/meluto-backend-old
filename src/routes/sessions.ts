@@ -1,9 +1,11 @@
 import { Router } from 'express'
-import { createSession } from 'controllers/sessions'
+import { createSession, refreshSession, endSession } from 'controllers/sessions'
+import { authenticated, checkCredentials } from 'middlewares/auth'
 
 const router = Router()
 
-router.post('/:userId', createSession)
-router.post('/renew')
+router.post('/', checkCredentials, createSession)
+router.get('/refresh', authenticated, refreshSession)
+router.get('/logout', endSession)
 
 export default router

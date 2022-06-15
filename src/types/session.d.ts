@@ -32,9 +32,13 @@ export interface SessionModel {
   userAgent: string
   createdAt: Date
   updatedAt: Date
-  blocked: boolean
+  blocked: {
+    value: boolean
+    updatedAt: Date
+  }
   refreshTokens: RefreshToken[]
   loginTimes: number
-  from: From,
+  ip: string
+  from: From
   lastLogin: Date
 }

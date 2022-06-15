@@ -280,3 +280,255 @@
     at next (/home/norton/Projetos/meluto/meluto-backend/node_modules/express/lib/router/route.js:137:13)
     at /home/norton/Projetos/meluto/meluto-backend/src/middlewares/auth.ts:174:16
     at Generator.next (<anonymous>)
+[01/Jun 13:32:13.037] (CastError) error: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User" CastError: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 13:35:54.493] (CastError) error: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User" CastError: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 13:37:38.403] (CastError) error: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User" CastError: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 13:39:01.929] (CastError) error: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User" CastError: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 13:40:50.771] (CastError) error: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User" CastError: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 13:41:06.010] (CastError) error: Cast to Embedded failed for value "123@123.com" (type string) at path "email" for model "User" CastError: Cast to Embedded failed for value "123@123.com" (type string) at path "email" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 13:41:26.922] (CastError) error: Cast to Embedded failed for value "123@123.com" (type string) at path "email" for model "User" CastError: Cast to Embedded failed for value "123@123.com" (type string) at path "email" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 13:43:07.026] (CastError) error: Cast to Embedded failed for value "123@123.com" (type string) at path "email" for model "User" CastError: Cast to Embedded failed for value "123@123.com" (type string) at path "email" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 13:43:20.138] (CastError) error: Cast to Embedded failed for value "123@123.com" (type string) at path "email" for model "User" CastError: Cast to Embedded failed for value "123@123.com" (type string) at path "email" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 13:44:28.228] (CastError) error: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User" CastError: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 13:45:14.581] (CastError) error: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User" CastError: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 13:45:35.171] (CastError) error: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User" CastError: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 13:46:02.058] (CastError) error: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User" CastError: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 13:46:30.032] (CastError) error: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User" CastError: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 13:47:40.099] (CastError) error: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User" CastError: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 13:48:06.969] (CastError) error: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User" CastError: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 13:48:22.664] (CastError) error: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User" CastError: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 13:48:51.139] (CastError) error: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User" CastError: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 13:49:27.194] (CastError) error: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User" CastError: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 13:49:48.293] (CastError) error: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User" CastError: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 13:50:18.022] (CastError) error: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User" CastError: Cast to Embedded failed for value "norton.glitz@gmail.com" (type string) at path "email" for model "User"
+    at model.Query.exec (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4650:21)
+    at model.Query.Query.then (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/query.js:4749:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 14:29:06.928] (MongoServerError) error: E11000 duplicate key error collection: melutoDatabaseDev.users index: email.value_1 dup key: { email.value: "norton.glitz@gmail.com" } MongoServerError: E11000 duplicate key error collection: melutoDatabaseDev.users index: email.value_1 dup key: { email.value: "norton.glitz@gmail.com" }
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/operations/insert.ts:75:25
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection_pool.ts:482:13
+    at handleOperationResult (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/sdam/server.ts:610:5)
+    at MessageStream.messageHandler (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection.ts:765:5)
+    at MessageStream.emit (node:events:527:28)
+    at MessageStream.emit (node:domain:475:12)
+    at processIncomingData (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:168:12)
+    at MessageStream._write (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:65:5)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+[01/Jun 14:30:25.910] (InvalidRoleError) error: invalid role InvalidRoleError: invalid role
+    at /home/norton/Projetos/meluto/meluto-backend/src/controllers/users/createUser.ts:158:17
+    at Generator.next (<anonymous>)
+    at fulfilled (/home/norton/Projetos/meluto/meluto-backend/src/controllers/users/createUser.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 14:31:50.140] (InvalidRoleError) error: invalid role InvalidRoleError: invalid role
+    at /home/norton/Projetos/meluto/meluto-backend/src/controllers/users/createUser.ts:158:17
+    at Generator.next (<anonymous>)
+    at fulfilled (/home/norton/Projetos/meluto/meluto-backend/src/controllers/users/createUser.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 14:32:39.970] (InvalidRoleError) error: invalid role InvalidRoleError: invalid role
+    at /home/norton/Projetos/meluto/meluto-backend/src/controllers/users/createUser.ts:159:17
+    at Generator.next (<anonymous>)
+    at fulfilled (/home/norton/Projetos/meluto/meluto-backend/src/controllers/users/createUser.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 14:33:00.833] (InvalidRoleError) error: invalid role InvalidRoleError: invalid role
+    at /home/norton/Projetos/meluto/meluto-backend/src/controllers/users/createUser.ts:159:17
+    at Generator.next (<anonymous>)
+    at fulfilled (/home/norton/Projetos/meluto/meluto-backend/src/controllers/users/createUser.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 14:33:27.269] (InvalidRoleError) error: invalid role InvalidRoleError: invalid role
+    at /home/norton/Projetos/meluto/meluto-backend/src/controllers/users/createUser.ts:159:17
+    at Generator.next (<anonymous>)
+    at fulfilled (/home/norton/Projetos/meluto/meluto-backend/src/controllers/users/createUser.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 14:33:58.962] (InvalidRoleError) error: invalid role InvalidRoleError: invalid role
+    at /home/norton/Projetos/meluto/meluto-backend/src/controllers/users/createUser.ts:159:17
+    at Generator.next (<anonymous>)
+    at fulfilled (/home/norton/Projetos/meluto/meluto-backend/src/controllers/users/createUser.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 14:34:14.772] (InvalidRoleError) error: invalid role InvalidRoleError: invalid role
+    at /home/norton/Projetos/meluto/meluto-backend/src/controllers/users/createUser.ts:160:17
+    at Generator.next (<anonymous>)
+    at fulfilled (/home/norton/Projetos/meluto/meluto-backend/src/controllers/users/createUser.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[01/Jun 14:34:54.281] (MongoServerError) error: E11000 duplicate key error collection: melutoDatabaseDev.users index: email.value_1 dup key: { email.value: "norton.glitz2@gmail.com" } MongoServerError: E11000 duplicate key error collection: melutoDatabaseDev.users index: email.value_1 dup key: { email.value: "norton.glitz2@gmail.com" }
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/operations/insert.ts:75:25
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection_pool.ts:482:13
+    at handleOperationResult (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/sdam/server.ts:610:5)
+    at MessageStream.messageHandler (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection.ts:765:5)
+    at MessageStream.emit (node:events:527:28)
+    at MessageStream.emit (node:domain:475:12)
+    at processIncomingData (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:168:12)
+    at MessageStream._write (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:65:5)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+[01/Jun 14:35:03.869] (MongoServerError) error: E11000 duplicate key error collection: melutoDatabaseDev.users index: docs.CPF.value_1 dup key: { docs.CPF.value: null } MongoServerError: E11000 duplicate key error collection: melutoDatabaseDev.users index: docs.CPF.value_1 dup key: { docs.CPF.value: null }
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/operations/insert.ts:75:25
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection_pool.ts:482:13
+    at handleOperationResult (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/sdam/server.ts:610:5)
+    at MessageStream.messageHandler (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection.ts:765:5)
+    at MessageStream.emit (node:events:527:28)
+    at MessageStream.emit (node:domain:475:12)
+    at processIncomingData (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:168:12)
+    at MessageStream._write (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:65:5)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+[01/Jun 14:35:34.395] (MongoServerError) error: E11000 duplicate key error collection: melutoDatabaseDev.users index: docs.CPF.value_1 dup key: { docs.CPF.value: null } MongoServerError: E11000 duplicate key error collection: melutoDatabaseDev.users index: docs.CPF.value_1 dup key: { docs.CPF.value: null }
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/operations/insert.ts:75:25
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection_pool.ts:482:13
+    at handleOperationResult (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/sdam/server.ts:610:5)
+    at MessageStream.messageHandler (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection.ts:765:5)
+    at MessageStream.emit (node:events:527:28)
+    at MessageStream.emit (node:domain:475:12)
+    at processIncomingData (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:168:12)
+    at MessageStream._write (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:65:5)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+[01/Jun 14:36:45.315] (MongoServerError) error: E11000 duplicate key error collection: melutoDatabaseDev.users index: docs.CPF.value_1 dup key: { docs.CPF.value: null } MongoServerError: E11000 duplicate key error collection: melutoDatabaseDev.users index: docs.CPF.value_1 dup key: { docs.CPF.value: null }
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/operations/insert.ts:75:25
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection_pool.ts:482:13
+    at handleOperationResult (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/sdam/server.ts:610:5)
+    at MessageStream.messageHandler (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection.ts:765:5)
+    at MessageStream.emit (node:events:527:28)
+    at MessageStream.emit (node:domain:475:12)
+    at processIncomingData (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:168:12)
+    at MessageStream._write (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:65:5)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+[01/Jun 14:37:43.174] (MongoServerError) error: E11000 duplicate key error collection: melutoDatabaseDev.users index: docs.CPF.value_1 dup key: { docs.CPF.value: null } MongoServerError: E11000 duplicate key error collection: melutoDatabaseDev.users index: docs.CPF.value_1 dup key: { docs.CPF.value: null }
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/operations/insert.ts:75:25
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection_pool.ts:482:13
+    at handleOperationResult (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/sdam/server.ts:610:5)
+    at MessageStream.messageHandler (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection.ts:765:5)
+    at MessageStream.emit (node:events:527:28)
+    at MessageStream.emit (node:domain:475:12)
+    at processIncomingData (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:168:12)
+    at MessageStream._write (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:65:5)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+[01/Jun 15:41:08.003] (MongoServerError) error: E11000 duplicate key error collection: melutoDatabaseDev.users index: email.value_1 dup key: { email.value: "norton.glitz3@gmail.com" } MongoServerError: E11000 duplicate key error collection: melutoDatabaseDev.users index: email.value_1 dup key: { email.value: "norton.glitz3@gmail.com" }
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/operations/insert.ts:75:25
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection_pool.ts:482:13
+    at handleOperationResult (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/sdam/server.ts:610:5)
+    at MessageStream.messageHandler (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection.ts:765:5)
+    at MessageStream.emit (node:events:527:28)
+    at MessageStream.emit (node:domain:475:12)
+    at processIncomingData (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:168:12)
+    at MessageStream._write (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:65:5)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+[01/Jun 15:42:17.112] (MongoServerError) error: E11000 duplicate key error collection: melutoDatabaseDev.users index: email.value_1 dup key: { email.value: "norton.glitz3@gmail.com" } MongoServerError: E11000 duplicate key error collection: melutoDatabaseDev.users index: email.value_1 dup key: { email.value: "norton.glitz3@gmail.com" }
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/operations/insert.ts:75:25
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection_pool.ts:482:13
+    at handleOperationResult (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/sdam/server.ts:610:5)
+    at MessageStream.messageHandler (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection.ts:765:5)
+    at MessageStream.emit (node:events:527:28)
+    at MessageStream.emit (node:domain:475:12)
+    at processIncomingData (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:168:12)
+    at MessageStream._write (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:65:5)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+[01/Jun 15:46:43.159] (MongoServerError) error: E11000 duplicate key error collection: melutoDatabaseDev.users index: email.value_1 dup key: { email.value: "norton.glitz3@gmail.com" } MongoServerError: E11000 duplicate key error collection: melutoDatabaseDev.users index: email.value_1 dup key: { email.value: "norton.glitz3@gmail.com" }
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/operations/insert.ts:75:25
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection_pool.ts:482:13
+    at handleOperationResult (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/sdam/server.ts:610:5)
+    at MessageStream.messageHandler (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection.ts:765:5)
+    at MessageStream.emit (node:events:527:28)
+    at MessageStream.emit (node:domain:475:12)
+    at processIncomingData (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:168:12)
+    at MessageStream._write (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:65:5)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+[04/Jun 11:40:58.426] (MongooseError) error: Operation `users.findOne()` buffering timed out after 10000ms MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[04/Jun 11:41:00.285] (MongooseError) error: Operation `users.findOne()` buffering timed out after 10000ms MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[04/Jun 11:41:01.590] (MongooseError) error: Operation `users.findOne()` buffering timed out after 10000ms MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[04/Jun 11:41:03.665] (MongooseError) error: Operation `users.findOne()` buffering timed out after 10000ms MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[04/Jun 11:41:06.366] (MongooseError) error: Operation `users.findOne()` buffering timed out after 10000ms MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[04/Jun 11:41:22.469] (MongooseError) error: Operation `users.findOne()` buffering timed out after 10000ms MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[04/Jun 11:41:46.447] (MongooseError) error: Operation `users.findOne()` buffering timed out after 10000ms MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[04/Jun 11:42:00.864] (Error) error: querySrv ETIMEOUT _mongodb._tcp.bra-sp-01.accoq.mongodb.net Error: querySrv ETIMEOUT _mongodb._tcp.bra-sp-01.accoq.mongodb.net
+    at QueryReqWrap.onresolve [as oncomplete] (node:dns:213:19)
+[04/Jun 11:42:17.747] (MongooseError) error: Operation `users.findOne()` buffering timed out after 10000ms MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)

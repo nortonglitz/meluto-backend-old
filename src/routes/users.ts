@@ -6,5 +6,6 @@ const router = Router()
 
 router.post('/', createUser)
 router.put('/:userId/:field', authenticated, passwordRequired, editUser)
+router.get('/logged', authenticated)
 
 export default router

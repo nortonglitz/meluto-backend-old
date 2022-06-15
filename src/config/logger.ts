@@ -16,7 +16,7 @@ const logger = winston.createLogger({
   transports: new winston.transports.File({ dirname: 'logs', filename: 'list.log' })
 })
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'prod') {
   logger.add(new winston.transports.Console({
     format: combine(
       timestamp({ format: 'HH:mm:ss.SSS' }),

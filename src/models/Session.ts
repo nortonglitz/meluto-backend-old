@@ -33,11 +33,17 @@ const fromSchema = new Schema({
   device: { type: deviceSchema }
 }, { _id: false })
 
+const blockedSchema = new Schema({
+  value: Boolean,
+  reason: String
+}, { timestamps: { createdAt: false }, _id: false })
+
 const sessionSchema = new Schema<SessionModel>({
-  _id: { type: Types.ObjectId, required: true },
-  userId: { type: String, required: true },
-  userAgent: { type: String, required: true },
-  blocked: { type: Boolean, default: false },
+  _id: Types.ObjectId,
+  userId: String,
+  userAgent: String,
+  ip: String,
+  blocked: { type: blockedSchema, default: { updatedAt: new Date(), value: false } },
   refreshTokens: { type: [refreshTokenSchema] },
   loginTimes: { type: Number, default: 1 },
   from: { type: fromSchema },

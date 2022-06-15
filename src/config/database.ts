@@ -19,7 +19,7 @@ const startDatabaseConnection = async () => {
       throw e
     }
 
-    await mongoose.connect(NODE_ENV === 'production' ? MONGO_URI : MONGO_URI_DEV)
+    await mongoose.connect(NODE_ENV === 'prod' ? MONGO_URI : MONGO_URI_DEV)
 
     mongoose.connection.on('error', err => {
       throw err

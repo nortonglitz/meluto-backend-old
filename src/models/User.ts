@@ -1,33 +1,84 @@
 import { Schema, model } from 'mongoose'
 import { UserModel } from 'types/user'
 
-const nameSchema = new Schema({
-  first: { type: String, required: [true, 'First name is required.'] },
-  last: { type: String, required: [true, 'Last name is required.'] }
+const namesSchema = new Schema({
+  first: String,
+  last: String,
+  trading: String,
+  company: String
 }, { timestamps: { createdAt: false }, _id: false })
 
 const passwordSchema = new Schema({
-  value: { type: String, required: [true, 'Password is required.'] }
+  value: { type: String, required: true }
 }, { timestamps: { createdAt: false }, _id: false })
 
 const usernameSchema = new Schema({
   value: { type: String, unique: true, required: true }
 }, { timestamps: { createdAt: false }, _id: false })
 
+const emailSchema = new Schema({
+  value: { type: String, unique: true, required: true },
+  verified: { type: Boolean, default: false }
+}, { timestamps: { createdAt: false }, _id: false })
+
+const addressSchema = new Schema({
+  state: String,
+  city: String,
+  district: String,
+  postalCode: String,
+  thoroughfare: String,
+  additionalInfo: String,
+  number: String
+}, { timestamps: { createdAt: false }, _id: false })
+
+const docSchema = new Schema({
+  value: { type: String },
+  verified: { type: Boolean, default: false }
+}, { timestamps: { createdAt: false }, _id: false })
+
+const CRECISchema = new Schema({
+  value: { type: String },
+  state: String,
+  verified: { type: Boolean, default: false }
+}, { timestamps: { createdAt: false }, _id: false })
+
+const blockedSchema = new Schema({
+  value: Boolean,
+  reason: String
+}, { timestamps: { createdAt: false }, _id: false })
+
+const verifiedSchema = new Schema({
+  value: Boolean
+}, { timestamps: { createdAt: false }, _id: false })
+
+const avatarSchema = new Schema({
+  value: String
+}, { timestamps: { createdAt: false }, _id: false })
+
 const userSchema = new Schema<UserModel>({
-  username: { type: usernameSchema },
-  password: { type: passwordSchema },
-  name: { type: nameSchema },
-  email: { type: String, required: [true, 'E-mail is required.'], unique: true },
-  emailVerified: { type: Boolean, default: false },
-  role: {
-    type: String,
-    default: 'user',
-    enum: {
-      values: ['user', 'admin', 'real estate', 'construction company', 'developer company', 'agent'],
-      message: '{VALUE} is not a valid role.'
-    }
+  username: { type: usernameSchema, required: true },
+  password: { type: passwordSchema, required: true },
+  names: namesSchema,
+  avatar: { type: avatarSchema, default: { updatedAt: new Date(), value: 'https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png' } },
+  email: { type: emailSchema, required: true },
+  role: { type: String, default: 'regular' },
+  taxInfo: String,
+  subrole: String,
+  whatsapp: String,
+  telephone: String,
+  site: String,
+  birthdate: Date,
+  businessActivity: String,
+  address: addressSchema,
+  description: String,
+  docs: {
+    CPF: docSchema,
+    CNPJ: docSchema,
+    CRECI: CRECISchema
   },
+  socialMedias: { instagram: String, youtube: String, facebook: String },
+  blocked: { type: blockedSchema, default: { updatedAt: new Date(), value: false } },
+  verified: { type: verifiedSchema, default: { updatedAt: new Date(), value: false } },
   createdAt: { type: Date, immutable: true }
 }, { timestamps: true })
 

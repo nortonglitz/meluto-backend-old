@@ -6,28 +6,30 @@ import { firstNameProperty, lastNameProperty, passwordProperty, emailProperty } 
 const ajv = new Ajv()
 addFormats(ajv, ['email'])
 
-interface CreateUser {
+interface CreateRegular {
+  role: string
   firstName: string
   lastName: string
   email: string
   password: string
 }
 
-const schema: JSONSchemaType<CreateUser> = {
+const schema: JSONSchemaType<CreateRegular> = {
   type: 'object',
   properties: {
+    role: { type: 'string', const: 'regular' },
     firstName: firstNameProperty,
     lastName: lastNameProperty,
-    email: emailProperty,
-    password: passwordProperty
+    password: passwordProperty,
+    email: emailProperty
   },
   additionalProperties: false,
-  required: ['firstName', 'lastName', 'email', 'password']
+  required: ['role', 'password', 'email', 'firstName', 'lastName']
 }
 
 const validate = ajv.compile(schema)
 
-export const validateCreateUser = (data: CreateUser) => {
+export const validateCreateRegular = (data: CreateRegular) => {
   if (validate(data)) {
     return
   }

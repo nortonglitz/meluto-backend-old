@@ -18,6 +18,7 @@ declare global {
       CRYPTO_ALGORITHM: string | undefined
       CRYPTO_ITERATIONS: string | undefined
       CRYPTO_KEYLEN: string | undefined
+      MAPS_KEY: string | undefined
     }
   }
 }

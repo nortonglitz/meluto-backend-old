@@ -1,23 +1,53 @@
 import { JSONSchemaType } from 'ajv'
 
+const states = [
+  'AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO',
+  'MA', 'MT', 'MS', 'MG', 'PA', 'PB', 'PR', 'PE', 'PI',
+  'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO'
+]
+
+const roles = [
+  'regular', 'admin', 'professional'
+]
+
 export const passwordProperty: JSONSchemaType<string> = {
   type: 'string',
   minLength: 8,
   pattern: '^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]+$'
 }
 
+export const tradingName: JSONSchemaType<string> = {
+  type: 'string',
+  pattern: '^[A-Za-záàâãéèêíïóôõöúçÁÀÂÃÉÈÍÏÓÔÕÖÚÇ0-9 ]+$',
+  minLength: 3,
+  maxLength: 55
+}
+
+export const companyName: JSONSchemaType<string> = {
+  type: 'string',
+  pattern: '^[A-Za-z0-9 ]+$',
+  minLength: 3,
+  maxLength: 55
+}
+
+export const descriptionProperty: JSONSchemaType<string> = {
+  type: 'string',
+  pattern: '^[0-9A-Za-záàâãéèêíïóôõöúçÁÀÂÃÉÈÍÏÓÔÕÖÚÇ ]+$|^$',
+  maxLength: 150
+}
+
 export const firstNameProperty: JSONSchemaType<string> = {
   type: 'string',
-  pattern: '^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$',
+  pattern: '^[A-Za-záàâãéèêíïóôõöúçÁÀÂÃÉÈÍÏÓÔÕÖÚÇ ]+$',
   minLength: 3,
-  maxLength: 40
+  maxLength: 25
 }
 
 export const lastNameProperty: JSONSchemaType<string> = {
   type: 'string',
-  pattern: '^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$',
-  minLength: 1,
-  maxLength: 80
+  pattern: '^[A-Za-záàâãéèêíïóôõöúçÁÀÂÃÉÈÍÏÓÔÕÖÚÇ ]+$',
+  minLength: 3,
+  maxLength: 25
 }
 
 export const emailProperty: JSONSchemaType<string> = {
@@ -28,7 +58,32 @@ export const emailProperty: JSONSchemaType<string> = {
 
 export const usernameProperty: JSONSchemaType<string> = {
   type: 'string',
-  pattern: '^[A-Za-z0-9áàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$',
+  pattern: '^[a-z0-9]+$',
   minLength: 3,
-  maxLength: 40
+  maxLength: 25
+}
+
+export const CRECINumberProperty: JSONSchemaType<string> = {
+  type: 'string',
+  pattern: '^[0-9]{6}$'
+}
+export const CRECIStateProperty: JSONSchemaType<typeof states[number]> = {
+  type: 'string',
+  pattern: '^[A-Z]{2}$',
+  enum: states
+}
+
+export const roleProperty: JSONSchemaType<typeof states[number]> = {
+  type: 'string',
+  enum: roles
+}
+
+export const CPFProperty: JSONSchemaType<string> = {
+  type: 'string',
+  pattern: '^[0-9]{11}$'
+}
+
+export const CNPJProperty: JSONSchemaType<string> = {
+  type: 'string',
+  pattern: '^[0-9]{14}$'
 }

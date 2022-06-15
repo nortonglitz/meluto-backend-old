@@ -11,25 +11,39 @@ export const checkCredentials: RequestHandler = async (req, res, next) => {
   const username = req.body.username
   const email = req.body.email
 
-  let userExists = null
+  let user = null
 
   try {
     validateCredentials({ password, username, email })
 
     if (email) {
-      userExists = await User.findOne({ email })
+      user = await User.findOne({ 'email.value': email })
     } else {
-      userExists = await User.findOne({ 'username.value': username })
+      user = await User.findOne({ 'username.value': username })
     }
 
-    if (!userExists) {
-      return res.status(400).json({
-        error: 'InvalidUserError',
-        message: 'user is not available'
+    if (!user) {
+      return res.status(401).json({
+        error: 'InvalidCredentialsError',
+        message: 'password, email or username does not match.'
       })
     }
 
-    req.user = userExists
+    if (!(await checkPassword(password, user.password.value))) {
+      return res.status(401).json({
+        error: 'InvalidCredentialsError',
+        message: 'password, email or username does not match.'
+      })
+    }
+
+    if (!user.email.verified) {
+      return res.status(403).json({
+        error: 'UnverifiedEmailError',
+        message: 'email not verified'
+      })
+    }
+
+    req.user = user
 
     return next()
   } catch (err: any) {
@@ -49,26 +63,35 @@ export const authenticated: RequestHandler = async (req, res, next) => {
     const accessToken = req.cookies[sessionCookie.accessTokenName]
 
     if (!accessToken) {
-      return res.status(401).json({
-        error: 'AuthenticationError',
-        message: 'authenticated route'
-      })
+      return res.status(401)
+        .clearCookie(sessionCookie.refreshTokenName)
+        .json({
+          error: 'AuthenticationError',
+          message: 'authenticated route.'
+        })
     }
 
     if (!accessToken.match(/^[a-zA-Z0-9_-]*\.[a-zA-Z0-9_-]*\.[a-zA-Z0-9_-]*$/gm)) {
-      const e = new Error('Token does not match')
-      e.name = 'TokenTypeError'
-      throw e
+      return res.status(401)
+        .clearCookie(sessionCookie.accessTokenName)
+        .clearCookie(sessionCookie.refreshTokenName)
+        .json({
+          error: 'TokenTypeError',
+          message: 'invalid token.'
+        })
     }
 
     const { sub: userId } = await verifyJwt(req.cookies.at, 'accessToken') as JwtPayload
     const userExists = await User.findById(userId)
 
     if (!userExists) {
-      return res.status(404).json({
-        error: 'UserNotFoundError',
-        message: 'can not find user'
-      })
+      return res.status(401)
+        .clearCookie(sessionCookie.accessTokenName)
+        .clearCookie(sessionCookie.refreshTokenName)
+        .json({
+          error: 'UserNotFoundError',
+          message: 'can not find user.'
+        })
     }
 
     req.user = userExists
@@ -79,15 +102,22 @@ export const authenticated: RequestHandler = async (req, res, next) => {
         const refreshToken = req.cookies[sessionCookie.refreshTokenName]
 
         if (!refreshToken) {
-          const e = new Error('Token is empty')
-          e.name = 'TokenEmptyError'
-          throw e
+          return res.status(401)
+            .clearCookie(sessionCookie.accessTokenName)
+            .json({
+              error: 'TokenEmptyError',
+              message: 'invalid token.'
+            })
         }
 
         if (!refreshToken.match(/^[a-zA-Z0-9_-]*\.[a-zA-Z0-9_-]*\.[a-zA-Z0-9_-]*$/gm)) {
-          const e = new Error('Token does not match')
-          e.name = 'TokenTypeError'
-          throw e
+          return res.status(401)
+            .clearCookie(sessionCookie.accessTokenName)
+            .clearCookie(sessionCookie.refreshTokenName)
+            .json({
+              error: 'TokenTypeError',
+              message: 'invalid token.'
+            })
         }
 
         const payload: JwtPayload = await verifyJwt(refreshToken, 'refreshToken') as JwtPayload
@@ -95,37 +125,57 @@ export const authenticated: RequestHandler = async (req, res, next) => {
         const session = await Session.findById(sessionId)
 
         if (!session) {
-          const e = new Error('Session not found')
-          e.name = 'SessionInvalidError'
-          throw e
+          return res.status(401)
+            .clearCookie(sessionCookie.accessTokenName)
+            .clearCookie(sessionCookie.refreshTokenName)
+            .json({
+              error: 'SessionInvalidError',
+              message: 'session not found.'
+            })
         }
 
-        if (session.blocked) {
-          const e = new Error('Session blocked')
-          e.name = 'SessionBlockedError'
-          throw e
+        if (session.blocked.value) {
+          return res.status(401)
+            .clearCookie(sessionCookie.accessTokenName)
+            .clearCookie(sessionCookie.refreshTokenName)
+            .json({
+              error: 'SessionBlockedError',
+              message: 'session blocked.'
+            })
         }
 
         if (session.userAgent !== req.headers['user-agent']) {
-          await Session.findByIdAndUpdate(sessionId, { blocked: true })
-          const e = new Error('Invalid device')
-          e.name = 'DeviceInvalidError'
-          throw e
+          await Session.findByIdAndUpdate(sessionId, { 'blocked.value': true, 'blocked.reason': 'Acessado por meio de um dispositivo diferente.' })
+          return res.status(401)
+            .clearCookie(sessionCookie.accessTokenName)
+            .clearCookie(sessionCookie.refreshTokenName)
+            .json({
+              error: 'DeviceInvalidError',
+              message: 'invalid device.'
+            })
         }
 
         const index = session.refreshTokens.findIndex(token => token.refreshToken === refreshToken)
 
         if (index === -1) {
-          const e = new Error('Refresh token invalid')
-          e.name = 'TokenInvalidError'
-          throw e
+          return res.status(401)
+            .clearCookie(sessionCookie.accessTokenName)
+            .clearCookie(sessionCookie.refreshTokenName)
+            .json({
+              error: 'TokenInvalidError',
+              message: 'refresh token invalid.'
+            })
         }
 
         if (session.refreshTokens[index].used === true) {
           await Session.findByIdAndUpdate(sessionId, { blocked: true })
-          const e = new Error('Duplicate refresh token')
-          e.name = 'TokenDuplicateError'
-          throw e
+          return res.status(401)
+            .clearCookie(sessionCookie.accessTokenName)
+            .clearCookie(sessionCookie.refreshTokenName)
+            .json({
+              error: 'TokenDuplicatedError',
+              message: 'duplicated refresh token.'
+            })
         }
 
         session.refreshTokens[index] = {
@@ -151,16 +201,18 @@ export const authenticated: RequestHandler = async (req, res, next) => {
         const user = await User.findById(session.userId)
 
         if (!user) {
-          return res.status(404).json({
-            error: 'UserNotFoundError',
-            message: 'can not find user'
-          })
+          return res.status(401)
+            .clearCookie(sessionCookie.accessTokenName)
+            .clearCookie(sessionCookie.refreshTokenName)
+            .json({
+              error: 'UserNotFoundError',
+              message: 'can not find user'
+            })
         }
 
         req.user = user
 
-        res
-          .status(200)
+        res.status(200)
           .cookie(sessionCookie.accessTokenName, newAccessToken, {
             sameSite: sessionCookie.sameSite,
             maxAge: sessionCookie.maxAge,
@@ -174,10 +226,13 @@ export const authenticated: RequestHandler = async (req, res, next) => {
 
         return next()
       } catch (err: any) {
-        res.status(401).json({
-          error: err.name,
-          message: err.message
-        })
+        res.status(401)
+          .clearCookie(sessionCookie.accessTokenName)
+          .clearCookie(sessionCookie.refreshTokenName)
+          .json({
+            error: err.name,
+            message: err.message
+          })
       }
     } else {
       return next(err)

@@ -2,23 +2,25 @@ import { User } from 'models'
 import { RequestHandler } from 'express'
 import { isValidObjectId } from 'mongoose'
 import { saltHashPassword } from 'utils/cryptography'
-import { validateName, validateEmail, validatePassword, validateUsername } from 'utils/formValidation'
+import { validateName, validateEmail, validatePassword, validateUsername, validateTradingName, validateDescription } from 'utils/formValidation'
 import { differenceInDays } from 'date-fns'
+import { isSameDate } from 'utils/dateHandler'
 
-const DAYS_TO_EDIT_NAME = 30
-const DAYS_TO_EDIT_USERNAME = 30
+const DAYS_TO_EDIT_NAME = 60
+const DAYS_TO_EDIT_USERNAME = 60
 
 export const editUser: RequestHandler = async (req, res, next) => {
-  const changeUserId = req.params.userId
+  const changeUserId = req.params.userId as any
   const user = req.user
   const field = req.params.field
 
-  const firstName = req.body.firstName
-  const lastName = req.body.lastName
-  const email = req.body.email
-  const newPassword = req.body.newPassword
-  const confirmNewPassword = req.body.confirmNewPassword
-  const username = req.body.username
+  const isProfessional = req.user.role === 'professional'
+
+  const {
+    firstName, lastName, email,
+    newPassword, confirmNewPassword, username,
+    tradingName, description
+  } = req.body
 
   if (!changeUserId || !isValidObjectId(changeUserId)) {
     return res.status(400).json({
@@ -40,7 +42,7 @@ export const editUser: RequestHandler = async (req, res, next) => {
     if (field === 'email') {
       validateEmail(email)
 
-      const userEmailExists = await User.findOne({ email })
+      const userEmailExists = await User.findOne({ 'email.value': email })
 
       if (userEmailExists) {
         return res.status(409).json({
@@ -48,44 +50,72 @@ export const editUser: RequestHandler = async (req, res, next) => {
           message: 'email in use'
         })
       }
-      modifiedUser = await User.findByIdAndUpdate(changeUserId, { email }, { new: true })
+      modifiedUser = await User.findByIdAndUpdate(changeUserId, { 'email.value': email }, { new: true })
     }
 
-    if (field === 'name') {
-      const pastDays = differenceInDays(new Date(), user.name.updatedAt)
-      if (pastDays < DAYS_TO_EDIT_NAME) {
-        return res.status(400).json({
-          error: 'DateBlockError',
-          message: `must wait ${DAYS_TO_EDIT_NAME - pastDays} ${(DAYS_TO_EDIT_NAME - pastDays) < 2 ? 'day' : 'days'} to edit name`
-        })
+    if (field === 'name' && user.names.first && user.names.last) {
+      if (!isSameDate(user.createdAt, user.names.updatedAt)) {
+        const pastDays = differenceInDays(new Date(), user.names.updatedAt)
+        if (pastDays < DAYS_TO_EDIT_NAME) {
+          return res.status(400).json({
+            error: 'DateBlockError',
+            message: `must wait ${DAYS_TO_EDIT_NAME - pastDays} ${(DAYS_TO_EDIT_NAME - pastDays) < 2 ? 'day' : 'days'} to edit name`
+          })
+        }
       }
-      if (user.name.first === firstName && user.name.last === lastName) {
+      if (user.names.first === firstName && user.names.last === lastName) {
         return res.status(409).json({
           error: 'SameNameError',
           message: 'can not modify name'
         })
       }
       validateName({ firstName, lastName })
-      modifiedUser = await User.findByIdAndUpdate(changeUserId, { name: { first: firstName, last: lastName } }, { new: true })
+      modifiedUser = await User.findByIdAndUpdate(changeUserId, { 'names.first': firstName, 'names.last': lastName }, { new: true })
+    }
+
+    if (field === 'tradingName' && user.names.trading) {
+      if (!isSameDate(user.createdAt, user.names.updatedAt)) {
+        const pastDays = differenceInDays(new Date(), user.names.updatedAt)
+        if (pastDays < DAYS_TO_EDIT_NAME) {
+          return res.status(400).json({
+            error: 'DateBlockError',
+            message: `must wait ${DAYS_TO_EDIT_NAME - pastDays} ${(DAYS_TO_EDIT_NAME - pastDays) < 2 ? 'day' : 'days'} to edit name`
+          })
+        }
+      }
+      if (user.names.trading === tradingName) {
+        return res.status(409).json({
+          error: 'SameNameError',
+          message: 'can not modify name'
+        })
+      }
+      validateTradingName({ tradingName })
+      modifiedUser = await User.findByIdAndUpdate(changeUserId, { 'names.trading': tradingName }, { new: true })
     }
 
     if (field === 'password') {
       validatePassword(newPassword, confirmNewPassword)
       modifiedUser = await User.findByIdAndUpdate(changeUserId,
-        { password: { value: await saltHashPassword(newPassword) } },
+        { 'password.value': await saltHashPassword(newPassword) },
         { new: true }
       )
     }
 
-    if (field === 'username') {
-      const pastDays = differenceInDays(new Date(), user.username.updatedAt)
-      if (pastDays < DAYS_TO_EDIT_USERNAME) {
-        return res.status(400).json({
-          error: 'DateBlockError',
-          message: `must wait ${DAYS_TO_EDIT_USERNAME - pastDays} ${(DAYS_TO_EDIT_USERNAME - pastDays) < 2 ? 'day' : 'days'} to edit username`
-        })
-      }
+    if (field === 'description') {
+      validateDescription({ description })
+      modifiedUser = await User.findByIdAndUpdate(changeUserId, { description }, { new: true })
+    }
 
+    if (field === 'username' && isProfessional) {
+      if (!isSameDate(user.createdAt, user.username.updatedAt)) {
+        const pastDays = differenceInDays(new Date(), user.username.updatedAt)
+        if (pastDays < DAYS_TO_EDIT_USERNAME) {
+          return res.status(400).json({
+            error: 'DateBlockError',
+            message: `must wait ${DAYS_TO_EDIT_USERNAME - pastDays} ${(DAYS_TO_EDIT_USERNAME - pastDays) < 2 ? 'day' : 'days'} to edit username`
+          })
+        }
+      }
       if (username === user.username.value) {
         return res.status(400).json({
           error: 'SameUsernameError',
@@ -94,7 +124,7 @@ export const editUser: RequestHandler = async (req, res, next) => {
       }
       validateUsername(username)
 
-      const userUsernameExists = await User.findOne({ username: { value: username } })
+      const userUsernameExists = await User.findOne({ 'username.value': username })
 
       if (userUsernameExists) {
         return res.status(409).json({
@@ -102,7 +132,14 @@ export const editUser: RequestHandler = async (req, res, next) => {
           message: 'username in use'
         })
       }
-      modifiedUser = await User.findByIdAndUpdate(changeUserId, { username: { value: username } }, { new: true })
+      modifiedUser = await User.findByIdAndUpdate(changeUserId, { 'username.value': username }, { new: true })
+    }
+
+    if (!isProfessional && !modifiedUser) {
+      return res.status(400).json({
+        error: 'InvalidRoleError',
+        message: 'can not edit this field'
+      })
     }
 
     if (!modifiedUser) {
@@ -112,8 +149,13 @@ export const editUser: RequestHandler = async (req, res, next) => {
       })
     }
 
+    const { password: _deletePassword, __v, ...userInfo } = modifiedUser.toObject()
+
     return res.status(200).json({
-      message: 'user updated'
+      user: {
+        ...userInfo,
+        password: { updatedAt: _deletePassword.updatedAt }
+      }
     })
   } catch (err: any) {
     if (err.name.includes('ValidationError')) {

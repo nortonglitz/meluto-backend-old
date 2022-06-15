@@ -1,89 +1,64 @@
-import { isValidObjectId, Types } from 'mongoose'
+import { Types } from 'mongoose'
 import { parseUserAgent } from 'utils/devideDetector'
 import { issueJwt } from 'utils/jwt'
 import { RequestHandler } from 'express'
-import { Session, User } from 'models'
+import { Session } from 'models'
 import { sessionCookie } from 'config/cookie'
-import { checkPassword } from 'utils/cryptography'
 
 export const createSession: RequestHandler = async (req, res, next) => {
-  const userId = req.params.userId
   const userAgent = req.headers['user-agent']
-
-  const password = req.body.password
-  const username = req.body.username
-  const email = req.body.email
+  const user = req.user
+  const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
 
   try {
-    if (!userId || !isValidObjectId(userId)) {
-      return res.status(400).json({
-        error: 'InvalidIdError',
-        message: 'can not use this id'
-      })
-    }
-
-    const userExists = await User.findById(userId)
-    const authUser = await User.findOne({ $or: [{ 'username.value': username }, { email }] })
-
-    if (!userExists || !authUser) {
-      return res.status(404).json({
-        error: 'InvalidUserError',
-        message: 'user not found'
-      })
-    }
-
-    if (userExists.id !== authUser.id) {
-      return res.status(401).json({
-        error: 'AuthenticationError',
-        message: 'can not create session'
-      })
-    }
-
-    if (!(await checkPassword(password, userExists.password.value))) {
-      return res.status(401).json({
-        error: 'AuthenticationError',
-        message: 'password does not match'
-      })
-    }
-
     if (!userAgent) {
-      return res.status(401).json({
-        error: 'InvalidDeviceError',
-        message: 'can not recognize device'
+      return res.status(404).json({
+        error: 'InvalidUserAgentError',
+        message: 'user agent not found'
       })
     }
 
-    const sessionExists = await Session.findOne({ userId, userAgent })
+    const session = await Session.findOne({ userId: user.id, userAgent })
 
-    const accessToken = await issueJwt(userId, 'accessToken')
+    const accessToken = await issueJwt(user.id, 'accessToken')
     let refreshToken = null
 
-    if (!sessionExists) {
+    if (!session) {
       const { device, client, os } = await parseUserAgent(userAgent)
       const sessionId = new Types.ObjectId()
       refreshToken = await issueJwt(sessionId.toString(), 'refreshToken')
 
       await Session.create({
         _id: sessionId,
-        userId,
+        userId: user.id,
         userAgent,
+        ip,
         refreshTokens: [{
           refreshToken
         }],
         from: { device, client, os }
       })
     } else {
-      refreshToken = await issueJwt(sessionExists.id, 'refreshToken')
-      await Session.findByIdAndUpdate(sessionExists.id, {
+      if (session.blocked.value) {
+        return res.status(401).json({
+          error: 'SessionBlockedError',
+          message: 'this session is blocked.'
+        })
+      }
+      refreshToken = await issueJwt(session.id, 'refreshToken')
+      await Session.findByIdAndUpdate(session.id, {
         $set: {
           refreshTokens: [{
             refreshToken
           }],
-          loginTimes: sessionExists.loginTimes + 1,
+          loginTimes: session.loginTimes + 1,
+          ip,
           lastLogin: Date.now()
         }
       })
     }
+
+    const { password: _deletePassword, __v, ...userInfo } = user.toObject()
 
     return res
       .status(201)
@@ -98,7 +73,12 @@ export const createSession: RequestHandler = async (req, res, next) => {
         httpOnly: sessionCookie.httpOnly
       })
       .json({
-        message: 'session created'
+        user: {
+          ...userInfo,
+          password: {
+            updatedAt: _deletePassword.updatedAt
+          }
+        }
       })
   } catch (err: any) {
     next(err)
