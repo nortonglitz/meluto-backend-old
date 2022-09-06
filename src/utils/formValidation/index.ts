@@ -13,5 +13,8 @@ export { validateCreateRegular } from './schemas/users/createRegular'
 export { validateCreateProfessionalCPF } from './schemas/users/createProfessionalCPF'
 export { validateCreateProfessionalCNPJ } from './schemas/users/createProfessionalCNPJ'
 
+// Temporary User
+export { validateCreateTemporaryUser } from './schemas/users/temporary/createTemporaryUser'
+
 // Auth
 export { validateCredentials } from './schemas/auth/checkCredentials'

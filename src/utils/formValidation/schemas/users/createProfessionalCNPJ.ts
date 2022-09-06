@@ -1,7 +1,7 @@
 import { formatError } from '../../formatError'
 import Ajv, { JSONSchemaType } from 'ajv'
 import addFormats from 'ajv-formats'
-import { CNPJProperty, emailProperty, firstNameProperty, lastNameProperty, passwordProperty } from 'utils/formValidation/properties'
+import { CNPJProperty, emailProperty, passwordProperty } from 'utils/formValidation/properties'
 
 const ajv = new Ajv()
 addFormats(ajv, ['email'])

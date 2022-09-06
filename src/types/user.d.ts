@@ -34,7 +34,11 @@ export interface UserModel extends Document {
   site: string
   description: string
   telephone: string
-  whatsapp: string
+  whatsapp: {
+    value: string
+    verified: boolean
+    updatedAt: Date
+  }
   businessActivity: 'real estate'
   role: 'admin' | 'professional' | 'regular'
   taxInfo: 'individual' | 'company'

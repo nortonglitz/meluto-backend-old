@@ -43,7 +43,7 @@ const sessionSchema = new Schema<SessionModel>({
   userId: String,
   userAgent: String,
   ip: String,
-  blocked: { type: blockedSchema, default: { updatedAt: new Date(), value: false } },
+  blocked: { type: blockedSchema, default: { updatedAt: new Date(), reason: '', value: false } },
   refreshTokens: { type: [refreshTokenSchema] },
   loginTimes: { type: Number, default: 1 },
   from: { type: fromSchema },

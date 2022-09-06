@@ -34,6 +34,7 @@ export interface SessionModel {
   updatedAt: Date
   blocked: {
     value: boolean
+    reason: string
     updatedAt: Date
   }
   refreshTokens: RefreshToken[]

@@ -36,13 +36,6 @@ export const checkCredentials: RequestHandler = async (req, res, next) => {
       })
     }
 
-    if (!user.email.verified) {
-      return res.status(403).json({
-        error: 'UnverifiedEmailError',
-        message: 'email not verified'
-      })
-    }
-
     req.user = user
 
     return next()
@@ -136,8 +129,6 @@ export const authenticated: RequestHandler = async (req, res, next) => {
 
         if (session.blocked.value) {
           return res.status(401)
-            .clearCookie(sessionCookie.accessTokenName)
-            .clearCookie(sessionCookie.refreshTokenName)
             .json({
               error: 'SessionBlockedError',
               message: 'session blocked.'

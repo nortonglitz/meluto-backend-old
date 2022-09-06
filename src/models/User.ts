@@ -21,6 +21,11 @@ const emailSchema = new Schema({
   verified: { type: Boolean, default: false }
 }, { timestamps: { createdAt: false }, _id: false })
 
+const whatsappSchema = new Schema({
+  value: { type: String },
+  verified: { type: Boolean, default: false }
+}, { timestamps: { createdAt: false }, _id: false })
+
 const addressSchema = new Schema({
   state: String,
   city: String,
@@ -32,12 +37,14 @@ const addressSchema = new Schema({
 }, { timestamps: { createdAt: false }, _id: false })
 
 const docSchema = new Schema({
-  value: { type: String },
+  value: String,
+  files: [String],
   verified: { type: Boolean, default: false }
 }, { timestamps: { createdAt: false }, _id: false })
 
 const CRECISchema = new Schema({
   value: { type: String },
+  files: [String],
   state: String,
   verified: { type: Boolean, default: false }
 }, { timestamps: { createdAt: false }, _id: false })
@@ -59,12 +66,12 @@ const userSchema = new Schema<UserModel>({
   username: { type: usernameSchema, required: true },
   password: { type: passwordSchema, required: true },
   names: namesSchema,
-  avatar: { type: avatarSchema, default: { updatedAt: new Date(), value: 'https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png' } },
+  avatar: { type: avatarSchema, default: { updatedAt: new Date(), value: 'https://storage.googleapis.com/meluto/users/avatar.png' } },
   email: { type: emailSchema, required: true },
   role: { type: String, default: 'regular' },
   taxInfo: String,
   subrole: String,
-  whatsapp: String,
+  whatsapp: whatsappSchema,
   telephone: String,
   site: String,
   birthdate: Date,

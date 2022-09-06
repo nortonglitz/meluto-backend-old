@@ -532,3 +532,155 @@
     at Timeout.<anonymous> (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)
     at listOnTimeout (node:internal/timers:559:17)
     at processTimers (node:internal/timers:502:7)
+[03/Jun 19:37:34.776] (MongooseError) error: document must have an _id before saving MongooseError: document must have an _id before saving
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/model.js:295:18
+    at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[06/Jun 15:39:04.583] (MongoServerError) error: E11000 duplicate key error collection: melutoDatabaseDev.emailcodes index: email_1 dup key: { email: "norton@corretor.com" } MongoServerError: E11000 duplicate key error collection: melutoDatabaseDev.emailcodes index: email_1 dup key: { email: "norton@corretor.com" }
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/operations/insert.ts:75:25
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection_pool.ts:482:13
+    at handleOperationResult (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/sdam/server.ts:610:5)
+    at MessageStream.messageHandler (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection.ts:765:5)
+    at MessageStream.emit (node:events:527:28)
+    at MessageStream.emit (node:domain:475:12)
+    at processIncomingData (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:168:12)
+    at MessageStream._write (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:65:5)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+[06/Jun 15:47:48.789] (MongoServerError) error: E11000 duplicate key error collection: melutoDatabaseDev.emailcodes index: email_1 dup key: { email: "norton@corretor.com" } MongoServerError: E11000 duplicate key error collection: melutoDatabaseDev.emailcodes index: email_1 dup key: { email: "norton@corretor.com" }
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/operations/insert.ts:75:25
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection_pool.ts:482:13
+    at handleOperationResult (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/sdam/server.ts:610:5)
+    at MessageStream.messageHandler (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection.ts:765:5)
+    at MessageStream.emit (node:events:527:28)
+    at MessageStream.emit (node:domain:475:12)
+    at processIncomingData (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:168:12)
+    at MessageStream._write (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:65:5)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+[02/Jun 13:26:08.036] (MongoServerError) error: E11000 duplicate key error collection: melutoDatabaseDev.users index: whatsapp.value_1 dup key: { whatsapp.value: null } MongoServerError: E11000 duplicate key error collection: melutoDatabaseDev.users index: whatsapp.value_1 dup key: { whatsapp.value: null }
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/operations/insert.ts:75:25
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection_pool.ts:482:13
+    at handleOperationResult (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/sdam/server.ts:610:5)
+    at MessageStream.messageHandler (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection.ts:765:5)
+    at MessageStream.emit (node:events:527:28)
+    at MessageStream.emit (node:domain:475:12)
+    at processIncomingData (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:168:12)
+    at MessageStream._write (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:65:5)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+[02/Jun 13:26:13.295] (MongoServerError) error: E11000 duplicate key error collection: melutoDatabaseDev.users index: whatsapp.value_1 dup key: { whatsapp.value: null } MongoServerError: E11000 duplicate key error collection: melutoDatabaseDev.users index: whatsapp.value_1 dup key: { whatsapp.value: null }
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/operations/insert.ts:75:25
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection_pool.ts:482:13
+    at handleOperationResult (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/sdam/server.ts:610:5)
+    at MessageStream.messageHandler (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection.ts:765:5)
+    at MessageStream.emit (node:events:527:28)
+    at MessageStream.emit (node:domain:475:12)
+    at processIncomingData (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:168:12)
+    at MessageStream._write (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:65:5)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+[02/Jun 13:27:08.952] (MongoServerError) error: E11000 duplicate key error collection: melutoDatabaseDev.users index: whatsapp.value_1 dup key: { whatsapp.value: null } MongoServerError: E11000 duplicate key error collection: melutoDatabaseDev.users index: whatsapp.value_1 dup key: { whatsapp.value: null }
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/operations/insert.ts:75:25
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection_pool.ts:482:13
+    at handleOperationResult (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/sdam/server.ts:610:5)
+    at MessageStream.messageHandler (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection.ts:765:5)
+    at MessageStream.emit (node:events:527:28)
+    at MessageStream.emit (node:domain:475:12)
+    at processIncomingData (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:168:12)
+    at MessageStream._write (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:65:5)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+[02/Jun 13:27:13.786] (MongoServerError) error: E11000 duplicate key error collection: melutoDatabaseDev.users index: whatsapp.value_1 dup key: { whatsapp.value: null } MongoServerError: E11000 duplicate key error collection: melutoDatabaseDev.users index: whatsapp.value_1 dup key: { whatsapp.value: null }
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/operations/insert.ts:75:25
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection_pool.ts:482:13
+    at handleOperationResult (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/sdam/server.ts:610:5)
+    at MessageStream.messageHandler (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection.ts:765:5)
+    at MessageStream.emit (node:events:527:28)
+    at MessageStream.emit (node:domain:475:12)
+    at processIncomingData (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:168:12)
+    at MessageStream._write (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:65:5)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+[02/Jun 13:28:57.506] (MongoServerError) error: E11000 duplicate key error collection: melutoDatabaseDev.users index: whatsapp.value_1 dup key: { whatsapp.value: null } MongoServerError: E11000 duplicate key error collection: melutoDatabaseDev.users index: whatsapp.value_1 dup key: { whatsapp.value: null }
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/operations/insert.ts:75:25
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection_pool.ts:482:13
+    at handleOperationResult (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/sdam/server.ts:610:5)
+    at MessageStream.messageHandler (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection.ts:765:5)
+    at MessageStream.emit (node:events:527:28)
+    at MessageStream.emit (node:domain:475:12)
+    at processIncomingData (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:168:12)
+    at MessageStream._write (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:65:5)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+[02/Jun 14:57:09.051] (MongoServerError) error: E11000 duplicate key error collection: melutoDatabaseDev.emailcodes index: email_1 dup key: { email: "amanda@email.com" } MongoServerError: E11000 duplicate key error collection: melutoDatabaseDev.emailcodes index: email_1 dup key: { email: "amanda@email.com" }
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/operations/insert.ts:75:25
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection_pool.ts:482:13
+    at handleOperationResult (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/sdam/server.ts:610:5)
+    at MessageStream.messageHandler (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/connection.ts:765:5)
+    at MessageStream.emit (node:events:527:28)
+    at MessageStream.emit (node:domain:475:12)
+    at processIncomingData (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:168:12)
+    at MessageStream._write (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongodb/src/cmap/message_stream.ts:65:5)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+[04/Jul 15:01:56.561] (MongooseError) error: Operation `users.findOne()` buffering timed out after 10000ms MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[04/Jul 15:02:11.130] (MongooseError) error: Operation `users.findOne()` buffering timed out after 10000ms MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[04/Jul 15:02:16.118] (MongooseServerSelectionError) error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/ MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/
+    at NativeConnection.Connection.openUri (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/connection.js:807:32)
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/index.js:340:10
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/helpers/promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/helpers/promiseOrCallback.js:31:10)
+    at Mongoose._promiseOrCallback (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/index.js:1140:10)
+    at Mongoose.connect (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/index.js:339:20)
+    at /home/norton/Projetos/meluto/meluto-backend/src/config/database.ts:22:20
+    at Generator.next (<anonymous>)
+    at /home/norton/Projetos/meluto/meluto-backend/src/config/database.ts:8:71
+[04/Jul 15:02:22.192] (MongooseError) error: Operation `users.findOne()` buffering timed out after 10000ms MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[04/Jul 15:03:36.771] (MongooseError) error: Operation `users.findOne()` buffering timed out after 10000ms MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[02/Jul 19:59:17.303] (MongooseError) error: Operation `temporaryusers.findOne()` buffering timed out after 10000ms MongooseError: Operation `temporaryusers.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[02/Jul 19:59:29.058] (MongooseError) error: Operation `temporaryusers.findOne()` buffering timed out after 10000ms MongooseError: Operation `temporaryusers.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[02/Jul 19:59:34.095] (MongooseServerSelectionError) error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/ MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/
+    at NativeConnection.Connection.openUri (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/connection.js:807:32)
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/index.js:340:10
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/helpers/promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/helpers/promiseOrCallback.js:31:10)
+    at Mongoose._promiseOrCallback (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/index.js:1140:10)
+    at Mongoose.connect (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/index.js:339:20)
+    at /home/norton/Projetos/meluto/meluto-backend/src/config/database.ts:22:20
+    at Generator.next (<anonymous>)
+    at /home/norton/Projetos/meluto/meluto-backend/src/config/database.ts:8:71
+[02/Jul 20:00:44.801] (MongooseError) error: Operation `temporaryusers.findOne()` buffering timed out after 10000ms MongooseError: Operation `temporaryusers.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[00/Aug 05:24:03.417] (MongooseServerSelectionError) error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/ MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/
+    at NativeConnection.Connection.openUri (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/connection.js:807:32)
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/index.js:340:10
+    at /home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/helpers/promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/helpers/promiseOrCallback.js:31:10)
+    at Mongoose._promiseOrCallback (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/index.js:1140:10)
+    at Mongoose.connect (/home/norton/Projetos/meluto/meluto-backend/node_modules/mongoose/lib/index.js:339:20)
+    at /home/norton/Projetos/meluto/meluto-backend/src/config/database.ts:22:20
+    at Generator.next (<anonymous>)
+    at /home/norton/Projetos/meluto/meluto-backend/src/config/database.ts:8:71

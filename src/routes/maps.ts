@@ -3,6 +3,6 @@ import { getLocalByCEP } from 'controllers/maps'
 
 const router = Router()
 
-router.post('/cep/:cep', getLocalByCEP)
+router.get('/cep/:CEP', getLocalByCEP)
 
 export default router

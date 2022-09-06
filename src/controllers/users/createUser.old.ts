@@ -1,18 +1,33 @@
-import { randomString } from 'utils/random'
+/* import { randomString } from 'utils/random'
 import { RequestHandler } from 'express'
-import { User } from 'models'
+import { User, TemporaryUser } from 'models'
 import { subDays } from 'date-fns'
+import { isValidObjectId } from 'mongoose'
 import { saltHashPassword } from 'utils/cryptography'
 import { validateCreateRegular, validateCreateProfessionalCPF, validateCreateProfessionalCNPJ, validateCRECI } from 'utils/formValidation'
 
 export const createUser: RequestHandler = async (req, res, next) => {
-  const {
-    role, subrole, firstName, lastName, docType,
-    docNumber, CRECINumber, CRECIState, tradingName,
-    companyName, email, password
-  } = req.body
+  const { temporaryUserId } = req.body
 
   try {
+    if (!temporaryUserId || !isValidObjectId(temporaryUserId)) {
+      return res.status(400).json({
+        error: 'InvalidIdError',
+        message: 'can not use this id'
+      })
+    }
+
+    const temporaryUserExists = await TemporaryUser.findById(temporaryUserId)
+
+    if (!temporaryUserExists) {
+      return res.status(409).json({
+        error: 'TemporaryUserNotFoundError',
+        message: 'can not find user'
+      })
+    }
+
+    const { email: { value: email }, role } = temporaryUserExists
+
     const userExists = await User.findOne({ 'email.value': email })
 
     if (userExists) {
@@ -76,7 +91,7 @@ export const createUser: RequestHandler = async (req, res, next) => {
           value: email
         },
         password: {
-          value: await saltHashPassword(password)
+          value: password
         },
         taxInfo: 'individual'
       })
@@ -168,7 +183,6 @@ export const createUser: RequestHandler = async (req, res, next) => {
         })
       }
       if (subrole === 'construction company') {
-        console.log('passei no construction')
         newUser = await User.create({
           role,
           subrole,
@@ -206,7 +220,6 @@ export const createUser: RequestHandler = async (req, res, next) => {
     const { password: _deletePassword, __v, ...userInfo } = newUser.toObject()
 
     return res.status(200).json({
-      message: 'user created',
       user: {
         ...userInfo
       }
@@ -222,3 +235,4 @@ export const createUser: RequestHandler = async (req, res, next) => {
     next(err)
   }
 }
+ */

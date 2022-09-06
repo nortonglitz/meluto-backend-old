@@ -10,6 +10,8 @@ const roles = [
   'regular', 'admin', 'professional'
 ]
 
+const taxInfos = ['CPF', 'CNPJ']
+
 export const passwordProperty: JSONSchemaType<string> = {
   type: 'string',
   minLength: 8,
@@ -73,9 +75,14 @@ export const CRECIStateProperty: JSONSchemaType<typeof states[number]> = {
   enum: states
 }
 
-export const roleProperty: JSONSchemaType<typeof states[number]> = {
+export const roleProperty: JSONSchemaType<typeof roles[number]> = {
   type: 'string',
   enum: roles
+}
+
+export const taxInfoProperty: JSONSchemaType<typeof taxInfos[number]> = {
+  type: 'string',
+  enum: ['CPF', 'CNPJ']
 }
 
 export const CPFProperty: JSONSchemaType<string> = {
