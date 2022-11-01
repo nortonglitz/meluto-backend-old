@@ -4,6 +4,7 @@ import { PhoneVerifierModel } from 'types/phoneVerifier'
 const phoneVerifierSchema = new Schema<PhoneVerifierModel>({
   phone: { type: String, unique: true },
   code: String,
+  verified: { type: Boolean, default: false },
   createdAt: { type: Date, expires: 86400, default: Date.now }
 }, { timestamps: { updatedAt: true } })
 
