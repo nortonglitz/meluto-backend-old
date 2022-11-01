@@ -6,6 +6,7 @@ export { validateUsername } from './fieldsValidation/usernameValidator'
 export { validateCRECI } from './fieldsValidation/CRECIValidator'
 export { validateTradingName } from './fieldsValidation/tradingNameValidator'
 export { validateDescription } from './fieldsValidation/descriptionValidator'
+export { validatePhone } from './fieldsValidation/phoneValidator'
 
 /* Schemas */
 // User

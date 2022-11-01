@@ -72,7 +72,7 @@ const userSchema = new Schema<UserModel>({
   taxInfo: String,
   subrole: String,
   whatsapp: whatsappSchema,
-  telephone: String,
+  phone: String,
   site: String,
   birthdate: Date,
   businessActivity: String,
