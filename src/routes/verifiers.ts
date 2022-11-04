@@ -1,10 +1,11 @@
 import { Router } from 'express'
-import { sendPhoneCode, sendEmailCode } from 'controllers/verifications'
+import { sendPhoneCode, sendEmailCode, validateEmailCode } from 'controllers/verifiers'
 
 const router = Router()
 
 /* E-mail */
 router.post('/email', sendEmailCode)
+router.put('/email', validateEmailCode)
 
 /* Phone */
 router.post('/phone', sendPhoneCode)

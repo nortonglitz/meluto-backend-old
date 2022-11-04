@@ -99,3 +99,8 @@ export const phoneProperty: JSONSchemaType<string> = {
   type: 'string',
   pattern: '^[0-9]{11}$'
 }
+
+export const validationCodeProperty: JSONSchemaType<string> = {
+  type: 'string',
+  pattern: '^[0-9]{6}$'
+}

@@ -19,3 +19,6 @@ export { validateCreateTemporaryUser } from './schemas/users/temporary/createTem
 
 // Auth
 export { validateCredentials } from './schemas/auth/checkCredentials'
+
+// Verifiers
+export { validateValidateEmail } from './schemas/verifiers/validateEmail'
