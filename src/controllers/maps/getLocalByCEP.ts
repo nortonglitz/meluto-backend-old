@@ -36,7 +36,7 @@ export const getLocalByCEP: RequestHandler = async (req, res, next) => {
         }
       })
     } else {
-      return res.status(404).json({
+      return res.status(400).json({
         error: 'NotFoundError',
         message: 'cep not found.'
       })

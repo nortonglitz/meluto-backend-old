@@ -97,7 +97,7 @@ export const CNPJProperty: JSONSchemaType<string> = {
 
 export const phoneProperty: JSONSchemaType<string> = {
   type: 'string',
-  pattern: '^[0-9]{11}$'
+  pattern: '^[0-9]{10,11}$'
 }
 
 export const validationCodeProperty: JSONSchemaType<string> = {

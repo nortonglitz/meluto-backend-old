@@ -7,7 +7,7 @@ export const verifyEmail: RequestHandler = async (req, res, next) => {
   try {
     const emailCode = await EmailCode.findOne({ email })
     if (!emailCode) {
-      return res.status(404).json({
+      return res.status(400).json({
         error: 'NoCodeError',
         message: 'no code generated for this email.'
       })
@@ -24,7 +24,7 @@ export const verifyEmail: RequestHandler = async (req, res, next) => {
 
     const user = await User.findOne({ 'email.value': email })
     if (!user) {
-      return res.status(404).json({
+      return res.status(400).json({
         error: 'InvalidEmailError',
         message: 'can not find user.'
       })

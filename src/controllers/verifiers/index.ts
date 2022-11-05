@@ -4,3 +4,4 @@ export { validateEmailCode } from './email/validateEmailCode'
 
 /* Phone */
 export { sendPhoneCode } from './phone/sendPhoneCode'
+export { validatePhoneCode } from './phone/validatePhoneCode'

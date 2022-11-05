@@ -14,21 +14,28 @@ export const sendPhoneCode: RequestHandler = async (req, res, next) => {
     if (userExists) {
       return res.status(400).json({
         error: 'DuplicatePhoneError',
-        message: 'phone already exists.'
+        message: 'phone already in use.'
       })
     }
 
     const phoneVerificationExists = await PhoneVerifier.findOne({ phone })
 
-    if (phoneVerificationExists) {
-      phoneVerificationExists.code = randomNumber(6)
-      await phoneVerificationExists.save()
-    } else {
+    if (!phoneVerificationExists) {
       await PhoneVerifier.create({
         code: randomNumber(6),
         phone
       })
+      return res.status(201).json({
+        message: 'code generated.'
+      })
     }
+
+    if (phoneVerificationExists.verified) {
+      phoneVerificationExists.verified = false
+    }
+
+    phoneVerificationExists.code = randomNumber(6)
+    await phoneVerificationExists.save()
 
     return res.status(201).json({
       message: 'code generated.'

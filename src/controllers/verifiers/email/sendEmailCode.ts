@@ -14,21 +14,28 @@ export const sendEmailCode: RequestHandler = async (req, res, next) => {
     if (userExists) {
       return res.status(400).json({
         error: 'DuplicateEmailError',
-        message: 'user already exists.'
+        message: 'e-mail already in use.'
       })
     }
 
     const emailVerificationExists = await EmailVerifier.findOne({ email })
 
-    if (emailVerificationExists) {
-      emailVerificationExists.code = randomNumber(6)
-      await emailVerificationExists.save()
-    } else {
+    if (!emailVerificationExists) {
       await EmailVerifier.create({
         code: randomNumber(6),
         email
       })
+      return res.status(201).json({
+        message: 'code generated.'
+      })
     }
+
+    if (emailVerificationExists.verified) {
+      emailVerificationExists.verified = false
+    }
+
+    emailVerificationExists.code = randomNumber(6)
+    await emailVerificationExists.save()
 
     return res.status(201).json({
       message: 'code generated.'

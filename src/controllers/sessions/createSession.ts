@@ -12,7 +12,7 @@ export const createSession: RequestHandler = async (req, res, next) => {
 
   try {
     if (!userAgent) {
-      return res.status(404).json({
+      return res.status(400).json({
         error: 'InvalidUserAgentError',
         message: 'user agent not found'
       })

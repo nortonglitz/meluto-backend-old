@@ -22,3 +22,4 @@ export { validateCredentials } from './schemas/auth/checkCredentials'
 
 // Verifiers
 export { validateValidateEmail } from './schemas/verifiers/validateEmail'
+export { validateValidatePhone } from './schemas/verifiers/validatePhone'
