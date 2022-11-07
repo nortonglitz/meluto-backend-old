@@ -1,5 +1,7 @@
 import { RequestHandler } from 'express'
 import { EmailVerifier } from 'models'
+import { verifiedFieldCookie } from 'config/cookie'
+import { issueFieldToken } from 'utils/jwt'
 import { validateValidateEmail } from 'utils/formValidation'
 
 type ValidateEmailParams = {
@@ -32,9 +34,18 @@ export const validateEmailCode: RequestHandler = async (req, res, next) => {
     emailVerificationExists.verified = true
     await emailVerificationExists.save()
 
-    return res.status(200).json({
-      message: 'e-mail successful validated.'
-    })
+    const verifiedEmailToken = await issueFieldToken(emailVerificationExists.id)
+
+    return res
+      .status(200)
+      .cookie(verifiedFieldCookie.verifiedEmailTokenName, verifiedEmailToken, {
+        sameSite: verifiedFieldCookie.sameSite,
+        maxAge: verifiedFieldCookie.maxAge,
+        httpOnly: verifiedFieldCookie.httpOnly
+      })
+      .json({
+        message: 'e-mail successful validated.'
+      })
   } catch (err: any) {
     if (err.name.includes('ValidationError')) {
       return res.status(400).json({

@@ -1,5 +1,7 @@
 import { RequestHandler } from 'express'
 import { PhoneVerifier } from 'models'
+import { issueFieldToken } from 'utils/jwt'
+import { verifiedFieldCookie } from 'config/cookie'
 import { validateValidatePhone } from 'utils/formValidation'
 
 type ValidatePhoneParams = {
@@ -32,9 +34,18 @@ export const validatePhoneCode: RequestHandler = async (req, res, next) => {
     phoneVerificationExists.verified = true
     await phoneVerificationExists.save()
 
-    return res.status(200).json({
-      message: 'phone successful validated.'
-    })
+    const verifiedPhoneToken = await issueFieldToken(phoneVerificationExists.id)
+
+    return res
+      .status(200)
+      .cookie(verifiedFieldCookie.verifiedPhoneTokenName, verifiedPhoneToken, {
+        sameSite: verifiedFieldCookie.sameSite,
+        maxAge: verifiedFieldCookie.maxAge,
+        httpOnly: verifiedFieldCookie.httpOnly
+      })
+      .json({
+        message: 'phone successful validated.'
+      })
   } catch (err: any) {
     if (err.name.includes('ValidationError')) {
       return res.status(400).json({

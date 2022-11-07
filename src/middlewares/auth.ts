@@ -4,7 +4,7 @@ import { sessionCookie } from 'config/cookie'
 import { User, Session } from 'models'
 import { validateCredentials } from 'utils/formValidation/schemas/auth/checkCredentials'
 import { checkPassword } from 'utils/cryptography'
-import { verifyJwt, issueJwt } from 'utils/jwt'
+import { verifySessionJwt, issueSessionJwt } from 'utils/jwt'
 
 export const checkCredentials: RequestHandler = async (req, res, next) => {
   const password = req.body.password
@@ -74,7 +74,7 @@ export const authenticated: RequestHandler = async (req, res, next) => {
         })
     }
 
-    const { sub: userId } = await verifyJwt(req.cookies.at, 'accessToken') as JwtPayload
+    const { sub: userId } = await verifySessionJwt(req.cookies.at, 'accessToken') as JwtPayload
     const userExists = await User.findById(userId)
 
     if (!userExists) {
@@ -113,7 +113,7 @@ export const authenticated: RequestHandler = async (req, res, next) => {
             })
         }
 
-        const payload: JwtPayload = await verifyJwt(refreshToken, 'refreshToken') as JwtPayload
+        const payload: JwtPayload = await verifySessionJwt(refreshToken, 'refreshToken') as JwtPayload
         const sessionId = payload.sub
         const session = await Session.findById(sessionId)
 
@@ -175,8 +175,8 @@ export const authenticated: RequestHandler = async (req, res, next) => {
           used: true
         }
 
-        const newRefreshToken = await issueJwt(session.id, 'refreshToken')
-        const newAccessToken = await issueJwt(session.userId, 'accessToken')
+        const newRefreshToken = await issueSessionJwt(session.id, 'refreshToken')
+        const newAccessToken = await issueSessionJwt(session.userId, 'accessToken')
 
         if (session.refreshTokens.length >= 5) {
           session.refreshTokens.shift()

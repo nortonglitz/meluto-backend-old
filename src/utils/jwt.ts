@@ -1,5 +1,5 @@
 import { sign, SignOptions, Secret, VerifyOptions, verify, Jwt, JwtPayload } from 'jsonwebtoken'
-import { accessToken, refreshToken } from 'config/jwt'
+import { accessToken, refreshToken, verifiedFieldToken } from 'config/jwt'
 import { resolve } from 'path'
 import { readFile } from 'fs'
 import { promisify } from 'util'
@@ -46,7 +46,9 @@ const asyncSign = (
   })
 }
 
-export const issueJwt = async (id: string, type: 'refreshToken' | 'accessToken') => {
+/* ISSUERS */
+
+export const issueSessionJwt = async (id: string, type: 'refreshToken' | 'accessToken') => {
   const privKey = await read(privKeyPath, 'utf8')
   const payload = {
     sub: id
@@ -60,11 +62,37 @@ export const issueJwt = async (id: string, type: 'refreshToken' | 'accessToken')
   return token
 }
 
-export const verifyJwt = async (token: string, type: 'refreshToken' | 'accessToken') => {
+export const issueFieldToken = async (id: string) => {
+  const privKey = await read(privKeyPath, 'utf8')
+  const payload = {
+    sub: id
+  }
+
+  const token = await asyncSign(payload, privKey, {
+    expiresIn: verifiedFieldToken.expiresIn,
+    algorithm: verifiedFieldToken.algorithm
+  })
+
+  return token
+}
+
+/* VERIFIERS */
+
+export const verifySessionJwt = async (token: string, type: 'refreshToken' | 'accessToken') => {
   const pubKey = await read(pubKeyPath, 'utf8')
 
   const payload = await asyncVerify(token, pubKey, {
     algorithms: type === 'accessToken' ? accessToken.algorithms : refreshToken.algorithms
+  })
+
+  return payload
+}
+
+export const verifyFieldJwt = async (token: string) => {
+  const pubKey = await read(pubKeyPath, 'utf8')
+
+  const payload = await asyncVerify(token, pubKey, {
+    algorithms: verifiedFieldToken.algorithms
   })
 
   return payload

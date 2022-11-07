@@ -11,3 +11,9 @@ export const refreshToken: JwtConfig = {
   algorithms: ['ES256'],
   expiresIn: '90d'
 }
+
+export const verifiedFieldToken: JwtConfig = {
+  algorithm: 'ES256',
+  algorithms: ['ES256'],
+  expiresIn: '2h'
+}

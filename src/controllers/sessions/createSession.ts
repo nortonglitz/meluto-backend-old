@@ -1,6 +1,6 @@
 import { Types } from 'mongoose'
 import { parseUserAgent } from 'utils/devideDetector'
-import { issueJwt } from 'utils/jwt'
+import { issueSessionJwt } from 'utils/jwt'
 import { RequestHandler } from 'express'
 import { Session } from 'models'
 import { sessionCookie } from 'config/cookie'
@@ -20,13 +20,13 @@ export const createSession: RequestHandler = async (req, res, next) => {
 
     const session = await Session.findOne({ userId: user.id, userAgent })
 
-    const accessToken = await issueJwt(user.id, 'accessToken')
+    const accessToken = await issueSessionJwt(user.id, 'accessToken')
     let refreshToken = null
 
     if (!session) {
       const { device, client, os } = await parseUserAgent(userAgent)
       const sessionId = new Types.ObjectId()
-      refreshToken = await issueJwt(sessionId.toString(), 'refreshToken')
+      refreshToken = await issueSessionJwt(sessionId.toString(), 'refreshToken')
 
       await Session.create({
         _id: sessionId,
@@ -45,7 +45,7 @@ export const createSession: RequestHandler = async (req, res, next) => {
           message: 'this session is blocked.'
         })
       }
-      refreshToken = await issueJwt(session.id, 'refreshToken')
+      refreshToken = await issueSessionJwt(session.id, 'refreshToken')
       await Session.findByIdAndUpdate(session.id, {
         $set: {
           refreshTokens: [{
