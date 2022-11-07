@@ -27,5 +27,5 @@ export const verifiedFieldCookie: VCookie = {
   maxAge: 720000, // use same as verification expiration (2h) - time in ms
   httpOnly: true,
   sameSite: NODE_ENV === 'prod' ? 'none' : 'strict',
-  secure: NODE_ENV === 'prod'
+  secure: true
 }

@@ -41,7 +41,8 @@ export const validateEmailCode: RequestHandler = async (req, res, next) => {
       .cookie(verifiedFieldCookie.verifiedEmailTokenName, verifiedEmailToken, {
         sameSite: verifiedFieldCookie.sameSite,
         maxAge: verifiedFieldCookie.maxAge,
-        httpOnly: verifiedFieldCookie.httpOnly
+        httpOnly: verifiedFieldCookie.httpOnly,
+        secure: verifiedFieldCookie.secure
       })
       .json({
         message: 'e-mail successful validated.'
