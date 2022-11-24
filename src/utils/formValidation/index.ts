@@ -10,6 +10,7 @@ export { validatePhone } from './fieldsValidation/phoneValidator'
 
 /* Schemas */
 // User
+export { validateCreateUser } from './schemas/users/createUser'
 export { validateCreateRegular } from './schemas/users/createRegular'
 export { validateCreateProfessionalCPF } from './schemas/users/createProfessionalCPF'
 export { validateCreateProfessionalCNPJ } from './schemas/users/createProfessionalCNPJ'

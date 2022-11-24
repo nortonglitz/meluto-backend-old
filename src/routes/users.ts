@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import { authenticated, passwordRequired } from 'middlewares/auth'
-import { createUserRegular, editUser, verifyEmail } from 'controllers/users'
+import { createUser, editUser, verifyEmail } from 'controllers/users'
 import { createTemporaryUser, verifyTemporaryUserEmail, editTemporaryUser } from 'controllers/temporaryUser'
 import { sendEmailCode } from 'controllers/codes/sendEmailCode'
 import { sendTemporaryUserEmailCode } from 'controllers/codes/sendTemporaryUserEmailCode'
@@ -19,7 +19,7 @@ const upload = multer({
   }
 })
 
-router.post('/regular', createUserRegular)
+router.post('/', createUser)
 router.post('/verify/email', authenticated, sendEmailCode)
 router.put('/verify/email', authenticated, verifyEmail)
 router.get('/logged', authenticated)

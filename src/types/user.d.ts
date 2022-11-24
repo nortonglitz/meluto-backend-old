@@ -33,7 +33,11 @@ export interface UserModel extends Document {
   }
   site: string
   description: string
-  phone: string
+  phone: {
+    value: string
+    verified: boolean
+    updatedAt: Date
+  }
   whatsapp: {
     value: string
     verified: boolean

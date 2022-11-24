@@ -9,7 +9,7 @@ export const sendPhoneCode: RequestHandler = async (req, res, next) => {
 
     validatePhone({ phone })
 
-    const userExists = await User.findOne({ phone })
+    const userExists = await User.findOne({ 'phone.value': phone })
 
     if (userExists) {
       return res.status(400).json({
